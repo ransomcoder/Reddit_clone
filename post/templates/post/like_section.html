@@ -1,0 +1,13 @@
+<div class="row mb-2 ml-1">
+    {% if user.is_authenticated %}
+    	<form method="POST" class="mr-3">
+    		{% csrf_token %}
+    		{% if is_liked|get_item:answer.id %}
+    			<a style="cursor: pointer;" type="submit" id="like" name="answer_id" value="{{ answer.id }}"><i style="color: red; font-size: 30px;" class="fas fa-heart"></i></a>
+    		{% else %}
+    			<a style="cursor: pointer;" type="submit" id="like" name="answer_id" value="{{ answer.id }}"><i style="color: red; font-size: 30px;" class="far fa-heart"></i></a>
+    		{% endif %}
+    	</form>
+    {% endif %}
+    {{ answer.get_count }} like{{ answer.get_count|pluralize }}
+</div>

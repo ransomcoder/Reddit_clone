@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+	<title>Crime - Login</title>
+{% endblock title %}
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col-lg-3 col-md-2 col-sm-1"></div>
+	<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+		<div class="content-section">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<h3 class="border-bottom mb-4" align="center">Log In</h3>
+						{{ form|crispy }}
+				</fieldset>
+				<div class="text-center mb-2">
+					<input class="btn btn-primary" type="submit" name="Sign Up" value="Login">
+				</div>
+				<div class="text-center mb-2">
+					<small class="text-muted ml-2">
+						<a href="{% url 'password_reset' %}">Forgot Password?</a>
+					</small>
+				</div>
+			</form>
+			<div class="border-top pt-3 text-center">
+				<span class="text-muted">
+					Need an account? <a class="ml-1" href="{% url 'register' %}">Sign up</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-2 col-sm-1"></div>
+</div>
+{% endblock content %}

@@ -1,0 +1,164 @@
+html, body {
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-nav .active {
+  font-weight: 500;
+}
+
+
+.navbar-nav li {
+  padding-right: 12px;
+}
+
+.nav-link {
+  font-size: 1em !important;
+}
+
+.rdf {
+  font-weight: 550;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.bg-color {
+  background-color: #255;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #2867b2;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.avatar{
+  width: 37px;
+  height: 37px;
+  display: inline;
+  overflow: hidden;
+  background-color: white;
+  border-color: black;
+  border-radius: 500px;
+}
+
+.dashboard {position: relative; z-index: 1; width: 100%; display: inline-block;}
+.dashboard ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; display: flex; justify-content: space-between;}
+.dashboard ul li {display: inline-block; list-style: none; margin: 0;}
+.dashboard ul li a {display: block; text-align: center; text-decoration: none;}
+
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+hr.light-diff {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+.event-link:hover {
+  background-color: #6691CC !important;
+  border: 0.1rem solid #FFA500 !important;
+}
+
+footer {
+  background-color: #555;
+  color: #d5d5d5;
+  padding-top: 2rem;
+  margin-top: auto;
+}
+
+ol li {
+  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
+}

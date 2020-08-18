@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="content-section">
+	<div class="media">
+		<!--<img class="rounded-circle account-img" src="{{ user.profile.image.url }}">-->
+		<div class="media-body">
+			<h2 class="account-heading">{{user.username}}</h2>
+			<span class="text-secondary">{{user.email}}</span>
+			<span style="float: right;"><small><strong>Last login:</strong></small> {{ user.last_login }}</span>
+		</div>
+	</div><hr>
+	{% if profile.verified %}
+	{% else %}
+		<h6 align="center">Your E-mail is not verified. Please
+    	<a href="{% url 'email_verify' %}" class="">Verify</a>!</h6><hr>
+	{% endif %}
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<h3 align="center" class="mb-4">Profile Info</h3>
+
+		<div class="form-row">
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				{{ u_form.username|as_crispy_field }}
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				{{ p_form.mobile_number|as_crispy_field }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				{{ u_form.first_name|as_crispy_field }}
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				{{ u_form.last_name|as_crispy_field }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-12">
+				{{ u_form.email|as_crispy_field }}
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-sm-12 text-center">
+				<input class="btn btn-outline-info" type="submit" name="Sign Up" value="Update">
+			</div>
+		</div>
+
+	</form>
+</div>
+{% endblock content %}

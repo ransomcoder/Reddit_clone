@@ -1,0 +1,12 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h3 align="center" class="mt-3 mb-3">{{ community.name }}</h3>
+<div class="container">
+	<p>{{ community.members.all.count }} member{{ community.members.all.count | pluralize }}</p>
+	<p>{{ community.desc | safe }}</p>
+	<small> Created on: <span class="text-muted">{{ community.date_time_created }}</span></small>
+</div>
+{% endblock content %}

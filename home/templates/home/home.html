@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+
+{% block meta %}
+
+<style>
+
+	.item{
+		background-color: #EAEAEA;
+		border-radius: 3px;
+	}
+
+	.link{
+		text-decoration: none;
+		color: black;
+	}
+
+	.link:hover{
+		text-decoration: none;
+		color: black;
+	}
+
+</style>
+
+{% endblock meta %}
+
+{% block content %}
+	<h1 class="mt-2" align="center"> Posts </h1>
+	{% if posts %}
+		{% for post in posts %}
+				<div class="mt-3 mb-3 row container item">
+					<div class="col-1 mt-1" >
+						<a class="link" href="{% url 'post_detail' post.id %}">
+							<small>{{ post.likes.all.count }} like{{ post.likes.all.count|pluralize }}</small>
+						</a>
+					</div>
+					<div class="col-11 mt-1">
+						<small><a class="link" href="{% url 'community_detail' post.community.id %}"><strong>{{ post.community }}</strong></a>&nbsp;&nbsp;Posted by {{ post.user }} &nbsp;&nbsp;</small>
+						<a class="link" href="{% url 'post_detail' post.id %}">
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.description | safe }}</p>
+						</a>
+					</div>
+				</div>
+			</a>
+		{% endfor %}
+	{% else %}
+		<h4>No posts in your feed! Join communities to view posts here</h4>
+	{% endif %}
+{% endblock content %}
